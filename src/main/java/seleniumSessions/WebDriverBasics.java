@@ -43,6 +43,17 @@ public class WebDriverBasics {
 		
 		driver.quit();
 		
+	//amazon, Muntra, booking.com
+		//initiate browser
+		//maximize
+		//Launch application
+		//print page title
+		//print current url
+		//print page source
+		//close browser
+		//WebDriverManagerConcept
+		//NavigationMethods
+		
 		
 		
 		
