@@ -26,41 +26,20 @@ public class Test {
 		
 		driver.manage().window().maximize();
 		
-		//driver.get("https://www.makemytrip.com/");
+		driver.get("https://demoqa.com/browser-windows");
 		
-		/*
-		 * WebElement fromcity= driver.findElement(By.id("fromCity"));
-		 * 
-		 * JavascriptExecutor js=(JavascriptExecutor)driver;
-		 * 
-		 * js.executeScript("arguments[0].click", fromcity);
-		 * 
-		 * Thread.sleep(3000);
-		 * 
-		 * WebElement from=
-		 * driver.findElement(By.xpath("//input[@placeholder='From']"));
-		 * from.sendKeys("Bangaluru");
-		 * 
-		 * from.sendKeys(Keys.DOWN);
-		 * 
-		 * driver.findElement(By.xpath("//p[text()='Bengaluru, India']")).click();
-		 */
+		driver.findElement(By.id("tabButton")).click();
 		
-	    Actions act = new Actions(driver);
-//	    act.keyDown(Keys.CONTROL).sendKeys("t").perform();
+		ArrayList<String> newTb = new ArrayList<String>(driver.getWindowHandles());
+	      //switch to new tab
+	    driver.switchTo().window(newTb.get(1));
+	      Thread.sleep(2000);
+	    System.out.println("Page title of new tab: " + driver.getTitle());
 	    
-	   // act.sendKeys(Keys.CONTROL,"t");
+	    System.out.println(driver.findElement(By.id("sampleHeading")).getText());
 	    
-	    JavascriptExecutor jse = (JavascriptExecutor)driver;
-	    jse.executeScript("window.open()");
-	    
-	    ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
-	    driver.switchTo().window(tabs.get(1));
-	    
-	    
-	    //driver.get("https://www.facebook.com");
-	    
-	    driver.navigate().to("https://facebook.com");
+		
+		
 	}
 	
 	
